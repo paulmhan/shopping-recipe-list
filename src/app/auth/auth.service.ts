@@ -12,7 +12,7 @@ export interface AuthResponseData {
     refreshToken: string;
     expiresIn: string;
     localId: string;
-    // registered?: boolean;
+    registered?: boolean;
   }
 
 @Injectable({providedIn: "root"})
@@ -32,6 +32,24 @@ export class AuthService {
         }).pipe(
             catchError(this.handleError))
     }
+
+
+    login(email: string, password: string){
+        return this.http.post<AuthResponseData>("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCPAihrUIs1DhU93b2luZ2Ef33dAvvVlEs", 
+        {
+            email: email,
+            password: password,
+            returnSecureToken: true
+          }
+        ).pipe(
+            catchError(this.handleError),
+          );
+    }
+
+
+
+
+
 
     private handleError(errorRes: HttpErrorResponse) {
         let errorMessage = 'An unknown error occurred!';
