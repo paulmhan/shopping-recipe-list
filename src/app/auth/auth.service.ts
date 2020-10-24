@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
+
 export interface AuthResponseData {
     kind: string;
     idToken: string;
@@ -13,7 +14,7 @@ export interface AuthResponseData {
 
 @Injectable({providedIn: "root"})
 
-export class AuthServicee {
+export class AuthService {
 
     constructor(private http: HttpClient){
 
