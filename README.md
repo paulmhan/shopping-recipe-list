@@ -8,8 +8,6 @@ My first application built in Angular. Uses Firebase database and hosting to all
 
 ## Description
 
-An application, built in React, that allows users to search for, save, and view books to review or purchase. 
-
 `Save Data` button to save the recipe to the database.<br>
 `Fetch Data` button to grab all recipes from the database.
 
