@@ -1,27 +1,35 @@
-# ShoppingRecipe
+# Recipe Shopping List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+My first application built in Angular. Uses Firebase database and hosting to allow users to add recipes, and save the ingredients to a shopping list. 
 
-## Development server
+## Screenshots 
+![](/src/assets/recipe.png)
+![](/src/assets/list.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+An application, built in React, that allows users to search for, save, and view books to review or purchase. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`Save Data` button to save the recipe to the database.<br>
+`Fetch Data` button to grab all recipes from the database.
 
-## Build
+Check Out the Live App Here: [Shopping Recipe List](https://ng-recipe-book-58248.web.app/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## APIs Used
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Authentication using [Firebase Auth REST API](https://firebase.google.com/docs/reference/rest/auth)
 
-## Running end-to-end tests
+```javascript
+  signup(email: string, password: string) {
+        return this.http.post<AuthResponseData>("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + environment.firebaseAPIKey,
+            {
+                email: email,
+                password: password,
+                returnSecureToken: true
+            }
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Technologies Used
+ - [Angular](https://angular.io/)
+ - [Firebase](https://firebase.google.com/)
